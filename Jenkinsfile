@@ -1,17 +1,30 @@
 pipeline {
-    agent any
+  agent any
 
-    stages {
-        stage('Clone Repo') {
-            steps {
-                git url: 'https://github.com/shika-dot/fiche-de-renseignement.git', branch: 'main'
-            }
-        }
-
-        stage('Test HTML/CSS') {
-            steps {
-                sh 'echo "Pipeline OK pour HTML/CSS !"'
-            }
-        }
+  stages {
+    stage('Clone') {
+      steps {
+        git url: 'git@github.com:shika-dot/fiche-de-renseignement.git', branch: 'main'
+      }
     }
+
+    stage('Tests') {
+      steps {
+        sh 'echo "Tests en cours..."'
+      }
+    }
+
+    stage('Build Docker') {
+      steps {
+        sh 'echo "Construction de l\'image Docker..."'
+      }
+    }
+
+    stage('Deploy to Server') {
+      steps {
+        sh 'echo "Déploiement sur le serveur..."'
+      }
+    }
+  }
 }
+
