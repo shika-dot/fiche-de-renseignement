@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git url: 'git@github.com:shika-dot/fiche-de-renseignement.git', branch: 'main'
+        git url: 'github.com:shika-dot/fiche-de-renseignement.git', branch: 'main'
       }
     }
 
